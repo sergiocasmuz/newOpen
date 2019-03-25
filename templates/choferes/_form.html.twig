@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+    {{ form_row(form.nombre) }}
+
+    <br>{{ form_row(form.apellido, {'attr':{'class':'form-control'}}) }}
+    <br>{{ form_row(form.direccion, {'attr':{'class':'form-control'}}) }}
+    <br>{{ form_row(form.dni, {'attr':{'class':'form-control'}}) }}
+    <br>{{ form_row(form.tel, {'attr':{'class':'form-control'}}) }}
+
+
+
+
+
+    <br>
+    <button class="btn btn-primary">{{ button_label|default('Guardar') }}</button>
+{{ form_end(form) }}

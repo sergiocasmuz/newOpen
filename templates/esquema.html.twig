@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+    {% block body %}
+        {% include 'barraSuperior.html.twig' %}
+        {% include 'barraLateral.html.twig' %}
+
+        <div class="container">
+            {% block contenido %}{% endblock %}
+        </div>
+    {% endblock %}

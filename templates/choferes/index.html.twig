@@ -1,0 +1,46 @@
+{% extends 'esquema.html.twig' %}
+
+{% block title %}Choferes index{% endblock %}
+
+{% block contenido %}
+    <div class="content-wrapper">
+    <h1>Choferes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TimeStamp</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Tel</th>
+                <th>Direccion</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for chofere in choferes %}
+            <tr>
+                <td>{{ chofere.id }}</td>
+                <td>{{ chofere.nombre }}</td>
+                <td>{{ chofere.apellido }}</td>
+                <td>{{ chofere.dni }}</td>
+                <td>{{ chofere.tel }}</td>
+                <td>{{ chofere.direccion }}</td>
+                <td>
+                    <a href="{{ path('choferes_show', {'id': chofere.id}) }}">show</a>
+                    <a href="{{ path('choferes_edit', {'id': chofere.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('choferes_new') }}">Create new</a>
+    </div>
+{% endblock %}

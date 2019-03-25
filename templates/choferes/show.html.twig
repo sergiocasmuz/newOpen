@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choferes{% endblock %}
+
+{% block body %}
+    <h1>Choferes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ chofere.id }}</td>
+            </tr>
+            <tr>
+                <th>TimeStamp</th>
+                <td>{{ chofere.timeStamp ? chofere.timeStamp|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ chofere.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ chofere.apellido }}</td>
+            </tr>
+            <tr>
+                <th>Dni</th>
+                <td>{{ chofere.dni }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ chofere.tel }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ chofere.direccion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('choferes_index') }}">back to list</a>
+
+    <a href="{{ path('choferes_edit', {'id': chofere.id}) }}">edit</a>
+
+    {{ include('choferes/_delete_form.html.twig') }}
+{% endblock %}
