@@ -1,0 +1,42 @@
+{% extends 'esquema.html.twig' %}
+
+{% block title %}CuentasCorrientes{% endblock %}
+
+{% block contenido %}
+    <h1>CuentasCorrientes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cuentas_corriente.id }}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ cuentas_corriente.apellido }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ cuentas_corriente.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ cuentas_corriente.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ cuentas_corriente.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Dni</th>
+                <td>{{ cuentas_corriente.dni }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cuentas_corrientes_index') }}">back to list</a>
+
+    <a href="{{ path('cuentas_corrientes_edit', {'id': cuentas_corriente.id}) }}">edit</a>
+
+    {{ include('cuentas_corrientes/_delete_form.html.twig') }}
+{% endblock %}

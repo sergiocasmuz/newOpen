@@ -1,0 +1,13 @@
+{% extends 'esquema.html.twig' %}
+
+{% block title %}Edit CuentasCorrientes{% endblock %}
+
+{% block contenido %}
+    <h1>Edit CuentasCorrientes</h1>
+
+    {{ include('cuentas_corrientes/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('cuentas_corrientes_index') }}">back to list</a>
+
+    {{ include('cuentas_corrientes/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'esquema.html.twig' %}
+
+{% block title %}CuentasCorrientes index{% endblock %}
+
+{% block contenido %}
+    <h1>CuentasCorrientes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Dni</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cuentas_corriente in cuentas_corrientes %}
+            <tr>
+                <td>{{ cuentas_corriente.id }}</td>
+                <td>{{ cuentas_corriente.apellido }}</td>
+                <td>{{ cuentas_corriente.nombre }}</td>
+                <td>{{ cuentas_corriente.direccion }}</td>
+                <td>{{ cuentas_corriente.telefono }}</td>
+                <td>{{ cuentas_corriente.dni }}</td>
+                <td>
+                    <a href="{{ path('cuentas_corrientes_show', {'id': cuentas_corriente.id}) }}">show</a>
+                    <a href="{{ path('cuentas_corrientes_edit', {'id': cuentas_corriente.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cuentas_corrientes_new') }}">Create new</a>
+{% endblock %}

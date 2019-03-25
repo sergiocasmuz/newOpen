@@ -7,11 +7,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ChoferesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CuentasCorrientesRepository")
  * @ORM\HasLifecycleCallbacks()
  */
-class Choferes
+class CuentasCorrientes
 {
+
     use Timestamp;
 
     /**
@@ -21,6 +22,10 @@ class Choferes
      */
     private $id;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $apellido;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -30,7 +35,12 @@ class Choferes
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $apellido;
+    private $direccion;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $telefono;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -38,17 +48,7 @@ class Choferes
     private $dni;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $tel;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $direccion;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Viajes", mappedBy="chofer")
+     * @ORM\OneToMany(targetEntity="App\Entity\Viajes", mappedBy="cc")
      */
     private $viajes;
 
@@ -60,20 +60,6 @@ class Choferes
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-
-
-    public function getNombre(): ?string
-    {
-        return $this->nombre;
-    }
-
-    public function setNombre(string $nombre): self
-    {
-        $this->nombre = $nombre;
-
-        return $this;
     }
 
     public function getApellido(): ?string
@@ -88,26 +74,14 @@ class Choferes
         return $this;
     }
 
-    public function getDni(): ?string
+    public function getNombre(): ?string
     {
-        return $this->dni;
+        return $this->nombre;
     }
 
-    public function setDni(string $dni): self
+    public function setNombre(string $nombre): self
     {
-        $this->dni = $dni;
-
-        return $this;
-    }
-
-    public function getTel(): ?string
-    {
-        return $this->tel;
-    }
-
-    public function setTel(string $tel): self
-    {
-        $this->tel = $tel;
+        $this->nombre = $nombre;
 
         return $this;
     }
@@ -124,6 +98,30 @@ class Choferes
         return $this;
     }
 
+    public function getTelefono(): ?string
+    {
+        return $this->telefono;
+    }
+
+    public function setTelefono(string $telefono): self
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    public function getDni(): ?string
+    {
+        return $this->dni;
+    }
+
+    public function setDni(string $dni): self
+    {
+        $this->dni = $dni;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Viajes[]
      */
@@ -136,7 +134,7 @@ class Choferes
     {
         if (!$this->viajes->contains($viaje)) {
             $this->viajes[] = $viaje;
-            $viaje->setChofer($this);
+            $viaje->setCc($this);
         }
 
         return $this;
@@ -147,8 +145,8 @@ class Choferes
         if ($this->viajes->contains($viaje)) {
             $this->viajes->removeElement($viaje);
             // set the owning side to null (unless already changed)
-            if ($viaje->getChofer() === $this) {
-                $viaje->setChofer(null);
+            if ($viaje->getCc() === $this) {
+                $viaje->setCc(null);
             }
         }
 

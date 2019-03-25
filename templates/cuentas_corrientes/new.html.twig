@@ -1,0 +1,11 @@
+{% extends 'esquema.html.twig' %}
+
+{% block title %}New CuentasCorrientes{% endblock %}
+
+{% block contenido %}
+    <h1>Create new CuentasCorrientes</h1>
+
+    {{ include('cuentas_corrientes/_form.html.twig') }}
+
+    <a href="{{ path('cuentas_corrientes_index') }}">back to list</a>
+{% endblock %}
