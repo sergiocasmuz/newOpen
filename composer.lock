@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1a5d3f83135caa99a85204f4ecd07fa0",
+    "content-hash": "fd91dcbbe0016ba67bae1f01d3de2e32",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5035,16 +5035,16 @@
         },
         {
             "name": "symfony/webpack-encore-bundle",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/webpack-encore-bundle.git",
-                "reference": "e23e9d32abd7fb62b84ad0ff62b235b517c61bc4"
+                "reference": "cabb53f92162ca383c6ad78b89605ea021645039"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/e23e9d32abd7fb62b84ad0ff62b235b517c61bc4",
-                "reference": "e23e9d32abd7fb62b84ad0ff62b235b517c61bc4",
+                "url": "https://api.github.com/repos/symfony/webpack-encore-bundle/zipball/cabb53f92162ca383c6ad78b89605ea021645039",
+                "reference": "cabb53f92162ca383c6ad78b89605ea021645039",
                 "shasum": ""
             },
             "require": {
@@ -5085,7 +5085,7 @@
                 }
             ],
             "description": "Integration with your Symfony app & Webpack Encore!",
-            "time": "2019-03-04T15:09:28+00:00"
+            "time": "2019-03-26T00:35:40+00:00"
         },
         {
             "name": "symfony/yaml",

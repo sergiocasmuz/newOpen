@@ -1,0 +1,46 @@
+{% extends 'esquema.html.twig' %}
+
+{% block title %}Viajes{% endblock %}
+
+{% block contenido %}
+    <h1>Viajes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ viaje.id }}</td>
+            </tr>
+            <tr>
+                <th>Salida</th>
+                <td>{{ viaje.salida ? viaje.salida|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Llegada</th>
+                <td>{{ viaje.llegada ? viaje.llegada|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Desde</th>
+                <td>{{ viaje.desde }}</td>
+            </tr>
+            <tr>
+                <th>Hasta</th>
+                <td>{{ viaje.hasta }}</td>
+            </tr>
+            <tr>
+                <th>DiaLaboral</th>
+                <td>{{ viaje.diaLaboral }}</td>
+            </tr>
+            <tr>
+                <th>Monto</th>
+                <td>{{ viaje.monto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('viajes_index') }}">back to list</a>
+
+    <a href="{{ path('viajes_edit', {'id': viaje.id}) }}">edit</a>
+
+    {{ include('viajes/_delete_form.html.twig') }}
+{% endblock %}

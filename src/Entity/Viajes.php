@@ -37,6 +37,11 @@ class Viajes
     private $hasta;
 
     /**
+     * @ORM\Column(type="integer")
+     */
+    private $diaLaboral;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Choferes", inversedBy="viajes")
      * @ORM\JoinColumn(nullable=false)
      */
@@ -137,6 +142,18 @@ class Viajes
     public function setMonto(?int $monto): self
     {
         $this->monto = $monto;
+
+        return $this;
+    }
+
+    public function getDiaLaboral(): ?int
+    {
+        return $this->diaLaboral;
+    }
+
+    public function setDiaLaboral(?int $diaLaboral): self
+    {
+        $this->diaLaboral = $diaLaboral;
 
         return $this;
     }
