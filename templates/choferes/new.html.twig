@@ -3,11 +3,11 @@
 {% block title %}New Choferes{% endblock %}
 
 {% block contenido %}
-<div class="content-wrapper">
+
     <h1>Nuevo Chofer</h1>
 
     {{ include('choferes/_form.html.twig') }}
 
     <a href="{{ path('choferes_index') }}">back to list</a>
-</div>
+
 {% endblock %}

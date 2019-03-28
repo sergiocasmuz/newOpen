@@ -7,13 +7,16 @@
         {% block stylesheets %}
 
         {% endblock %}
+
+
     </head>
     <body class="skin-blue sidebar-mini sidebar-collapse">
-        <div class="main_container">
+        <div class="content-wrapper">
         {% block body %}{% endblock %}
+        </div>
             {% block javascripts %}
                 {{ encore_entry_script_tags('app') }}
         {% endblock %}
-        </div>
+
     </body>
 </html>

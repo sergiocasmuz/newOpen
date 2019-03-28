@@ -25,11 +25,12 @@ class ViajesType extends AbstractType
             ->add('hasta',TextType::class,['attr'=>['class'=>'form-control' ]])
             ->add('diaLaboral',IntegerType::class,['attr'=>['class'=>'form-control' ]])
             ->add('monto',MoneyType::class,['attr'=>['class'=>'form-control' ]])
-            ->add('chofer', EntityType::class, [
+            ->add('chofer', EntityType::class, ['attr' =>['class' =>'form-control'],
                           'class' => Choferes::class,
                           'choice_label' => 'nombre',
+
                         ])
-            ->add('cc', EntityType::class, [
+            ->add('cc', EntityType::class, ['attr' =>['class' =>'form-control'],
                           'class' => CuentasCorrientes::class,
                           'choice_label' => 'apellido',
                         ])

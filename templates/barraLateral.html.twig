@@ -32,10 +32,10 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
-            <li><a href="#"><i class="fa fa-map"></i> <span>Viajes</span></a></li>
-            <li class="active"><a href="#"><i class="fa fa-car"></i> <span>Chofers</span></a></li>
-            <li><a href="#"><i class="fa fa-users"></i> <span>Cuentas Corrientes</span></a></li>
-            <li><a href="#"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
+            <li><a href="{{ path('viajes_index') }}"><i class="fa fa-map"></i> <span>Viajes</span></a></li>
+            <li class="active"><a href="{{ path("choferes_index") }}"><i class="fa fa-car"></i> <span>Chofers</span></a></li>
+            <li><a href="{{ path('cuentas_corrientes_index') }}"><i class="fa fa-users"></i> <span>Cuentas Corrientes</span></a></li>
+            <li><a href="{{ path('usuarios_index') }}"><i class="fa fa-user"></i> <span>Usuarios</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
                     <span class="pull-right-container">

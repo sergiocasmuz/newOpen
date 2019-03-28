@@ -1,14 +1,13 @@
 body {
 }
+@import "~admin-lte/bower_components/bootstrap/dist/css/bootstrap.min.css";
 @import "~admin-lte/bower_components/bootstrap/dist/css/bootstrap.css";
-@import "~admin-lte/dist/css/skins/_all-skins.css";
+@import "~admin-lte/bower_components/ion.rangeSlider/css/ion.rangeSlider.css";
+@import "~admin-lte/plugins/iCheck/all.css";
+@import "~admin-lte/plugins/timepicker/bootstrap-timepicker.css";
 @import "~admin-lte/dist/css/AdminLTE.css";
 @import "~admin-lte/dist/css/AdminLTE.min.css";
+@import "~admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css";
+@import "~admin-lte/dist/css/skins/_all-skins.css";
 @import "~admin-lte/bower_components/font-awesome/css/font-awesome.css";
-@import "~admin-lte/plugins/bootstrap-slider/slider.css";
-@import "~admin-lte/plugins/timepicker/bootstrap-timepicker.css";
-@import "~admin-lte/plugins/pace/pace.css";
-@import "~admin-lte/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css";
-@import "~admin-lte/bower_components/bootstrap/dist/css/bootstrap-theme.min.css";
-@import "~admin-lte/bower_components/bootstrap-daterangepicker/daterangepicker.css";
 

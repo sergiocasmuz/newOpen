@@ -16,19 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ViajesController extends AbstractController
 {
     /**
-     * @Route("/", name="viajes_index", methods={"GET"})
+     * @Route("/", name="viajes_index")
      */
-    public function index(ViajesRepository $viajesRepository): Response
-    {
-        return $this->render('viajes/index.html.twig', [
-            'viajes' => $viajesRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="viajes_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
+    public function index(ViajesRepository $viajesRepository, Request $request): Response
     {
         $viaje = new Viajes();
         $form = $this->createForm(ViajesType::class, $viaje);
@@ -39,14 +29,21 @@ class ViajesController extends AbstractController
             $entityManager->persist($viaje);
             $entityManager->flush();
 
-            return $this->redirectToRoute('viajes_index');
+
+            return $this->redirectToRoute('viajes_index', [
+                'id' => $viaje->getId(),
+            ]);
+
         }
 
-        return $this->render('viajes/new.html.twig', [
-            'viaje' => $viaje,
-            'form' => $form->createView(),
-        ]);
+            return $this->render('viajes/index.html.twig', [
+                'viajes' => $viajesRepository->findAll(),
+                'form' => $form->createView(),
+            ]);
+
+
     }
+
 
     /**
      * @Route("/{id}", name="viajes_show", methods={"GET"})

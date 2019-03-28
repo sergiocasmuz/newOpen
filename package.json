@@ -1,16 +1,19 @@
 {
   "dependencies": {
-    "license": "MIT",
     "admin-lte": "^2.4.10",
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
+    "less": "^3.9.0",
+    "license": "MIT",
     "popper.js": "^1.14.7",
     "sass": "^1.17.2"
   },
   "devDependencies": {
+    "@babel/preset-react": "7.0.0",
     "@fortawesome/fontawesome-free": "^5.7.2",
     "@symfony/webpack-encore": "^0.24.0",
     "add": "^2.0.6",
+    "less-loader": "4.1.0",
     "node-sass": "^4.11.0",
     "sass-loader": "7.0.1",
     "webpack-notifier": "1.6.0",
